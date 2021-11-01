@@ -1,4 +1,4 @@
-package com.app;
+
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,16 +15,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 
-public class App extends JFrame  {
+public class App extends JFrame {
 	
 	private JPanel panel;
 	private JButton btn1;
 	private JButton btn2;
 	private JButton btn3;
 	
-	public void setColor(){
-		panel.setBackground(Color.YELLOW);
-	}
+	
 	public static void main(String[] args){
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -52,11 +50,15 @@ public class App extends JFrame  {
 		panel.add(btn1);
 		panel.add(btn2);
 		panel.add(btn3);
+		
 		btn1.addMouseListener(new MouseListener(){
-
+			
+			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				panel.setBackground(Color.YELLOW);
+				cambioAmarillo();
+				
+				
 			}
 			
 			@Override
@@ -78,6 +80,7 @@ public class App extends JFrame  {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				panel.setBackground(Color.BLUE);
+				
 			}
 			
 			@Override
@@ -120,6 +123,14 @@ public class App extends JFrame  {
 		b.setBounds(100, 100, 100, 40);
 		b.setEnabled(true);
 	}
-
-		
+	
+	public void cambioAmarillo() {
+		panel.setBackground(Color.yellow);
+	}
+	public void cambioAzul() {
+		panel.setBackground(Color.blue);
+	}
+	public void cambioRojo() {
+		panel.setBackground(Color.red);
+	}
 }
